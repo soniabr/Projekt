@@ -7,19 +7,21 @@
 
 ## General Introduction
 
-The segregation of people in living areas of cities is a well known phenomena which was investigated strongly for the case of blacks and whites living in the US. Because we are living in Zurich we would like to find out more about the social situation here. Zurich is a multi cultural city, many people from different origins and social backgrounds are living here. Thats why we would like to find out what makes people choose the part they live in. The combination of circumstances of people and the characteristics of places makes it a complex problem. In order to investigate this interactions, we will create a general model based on the data of Zurich that takes both into account, the peoples history and the properties of the place. 
+The segregation of people in living areas of cities is a well known phenomena which was investigated strongly for the case of blacks and whites living in the US. Because we are living in Zürich we would like to find out more about the social situation here. Zürich is a multi cultural city, many people from different origins and social backgrounds are living here. Thats why we would like to find out what makes people choose the part they live in. The combination of circumstances of people and the characteristics of places makes it a complex problem. In order to investigate this interactions, we will create a general model based on the data of Zürich that takes the peoples origin, age and family state into account.
 
 ## The Model
 
-Based on statistical data of Zurich we want to implement a model which takes into account the origin and social status of the people as well as the available living options. We plan to use an agent based model. Each agent will have an origin and a social status. The city will be a grid of different locations which have different characteristics such as housing prices or how they are connected to public institutions. Taking into account the characteristics of a place and the social status of their neighbors the agents have to decide whether they will stay or move to a next place. 
+Based on statistical data of Zürich we want to implement a model which takes into account the origin age and family state of the people. Since it is not possible to get any data on the social state of every of Zurichs inhabitants, properties like housing prices of certain areas and attractivness of places cant be taken into account. 
+We plan to use an agent based model. Each agent will have an origin, i.e. will bi Swiss or foreign, an age and a family state and be placed randomly at a certain location in the city. The city will be a grid diveded into 12 districts. Looking at the characteristics of their neighbors and the average of each property in the respective district, the agents have to decide whether they will stay or move to a next place. 
+The tolarences of agents to still stay at a place, even though the situation is not fully satisfying can be varied in the model.
 
 ## Fundamental Questions
 
-What makes people choose their place to live? Is it the social environment? Or is it given by the characteristics of the location? How do these factors interact? And based on statistical data we will try to verify if the model reproduces reality. 
+What makes people choose their place to live? Is it the social environment? How can the tolerances change the moving behaviour? Based on statistical data we will try to verify if the model reproduces reality and try to chose the right parameters. 
 
 ## Expected Results
 
-We expect it to be an interaction of social environment and characteristics of the location. For some people the location will set their place to live because they don't have the possibilities to go to another place. Others can choose the place freely because they have the means and will choose due to the social environment. 
+We expect the simulation to relax in an equilibrium, depending on the chosen tolerances.
 
 ## References 
 
@@ -27,7 +29,7 @@ Li Yan (2009): The Dynamics of Residential Segregation in Buffalo: An Agent-base
 
 Thomas C. Schelling (1969): Models of Segregation
 
-Statistik der Stadt Zurich: Segregation und Umz�ge in der Stadt und Agglomeration Zurich
+Statistik der Stadt Zurich: Segregation und Umz�ge in der Stadt und Agglomeration Zurich
 
 Statistik der Stadt Zurich: Zurich in Zahlen 2013
 
