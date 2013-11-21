@@ -29,7 +29,7 @@ Li Yan (2009): The Dynamics of Residential Segregation in Buffalo: An Agent-base
 
 Thomas C. Schelling (1969): Models of Segregation
 
-Statistik der Stadt Zurich: Segregation und Umz�ge in der Stadt und Agglomeration Zurich
+Statistik der Stadt Zurich: Segregation und Umz�uge in der Stadt und Agglomeration Zurich
 
 Statistik der Stadt Zurich: Zurich in Zahlen 2013
 
