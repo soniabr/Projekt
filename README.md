@@ -7,7 +7,7 @@
 
 ## General Introduction
 
-The segregation of people in living areas of cities is a well known phenomena which was investigated strongly for the case of blacks and whites living in the US. Because we are living in Zürich we would like to find out more about the social situation here. Zürich is a multi cultural city, many people from different origins and social backgrounds are living here. Thats why we would like to find out what makes people choose the part they live in. The combination of circumstances of people and the characteristics of places makes it a complex problem. In order to investigate this interactions, we will create a general model based on the data of Zürich that takes the peoples origin, age and family state into account.
+The segregation of people in living areas of cities is a well known phenomena which was investigated strongly for the case of blacks and whites living in the US. Because we are living in Zürich we would like to find out more about the social situation here. Zürich is a multi cultural city, many people from different origins and social backgrounds are living here. Thats why we would like to find out what makes people choose where they want to live. A combination of circumstances and characteristics of people makes this it a complex problem. In order to investigate this interactions, we will create a general model based on the data of Zurich that takes the peoples origin, age and family state into account.
 
 ## The Model
 
@@ -17,7 +17,7 @@ The tolarences of agents to still stay at a place, even though the situation is 
 
 ## Fundamental Questions
 
-What makes people choose their place to live? Is it the social environment? How can the tolerances change the moving behaviour? Based on statistical data we will try to verify if the model reproduces reality and try to chose the right parameters. 
+What makes people choose their place to live? Is it the social environment? How can the tolerances change the moving behaviour? Based on statistical data we will try to verify if the model reproduces reality and try to chose the right parameters. An other aspect would be to find parameters i.e. tolerances such that the people, even though they are not totally satisfied with the situation, there is no macroscopic segregation (ghetto formation) visible.
 
 ## Expected Results
 
