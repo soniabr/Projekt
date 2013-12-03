@@ -14,7 +14,7 @@ for d=1:12                                  % districts
     
                                              
     for j=k:lp
-    
+ 
         Avg(d,1)=Avg(d,1)+agent(j).origin;       % Avg(1) fraction of swiss residents in district d
         Avg(d,2)=Avg(d,2)+agent(j).age;          % Avg(2) defines average age in district
         Avg(d,3)=Avg(d,3)+agent(j).famstat;      % Avg(3) fraction of families
@@ -65,9 +65,9 @@ for d=1:12                                  % districts
     for nb=1:4    
         
         %check family status -> +1 if same
-        agent(i).points = agent(i).points + (agent(i).famstat==agent(n(nb)).famstat)/4*tol(4);
-        agent(i).points = agent(i).points + (agent(i).origin==agent(n(nb)).origin)/4*tol(5);
-        agent(i).points = agent(i).points + (round(agent(i).age/10)==round(agent(n(nb)).age/10))/4*tol(6);
+        agent(i).points = agent(i).points + (agent(i).famstat==agent(n(nb)).famstat)/4*tol(6);
+        agent(i).points = agent(i).points + (agent(i).origin==agent(n(nb)).origin)/4*tol(4);
+        agent(i).points = agent(i).points + (round(agent(i).age/10)==round(agent(n(nb)).age/10))/4*tol(5);
    
     end
     
@@ -91,3 +91,4 @@ toc
 
 
 end
+

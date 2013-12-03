@@ -43,7 +43,7 @@ SizeDistricts=cell2mat(struct2cell(load('SizeDistrict.mat')));
 
 %% Initials
 
-tol=[0 0 0 1 1 0; 0 0 0 1 0 1; 0 0 0 0 1 1; 1 0 0 0 0 0];  % tolerance origin / age / family situation
+tol=[0 0 0 1 1 0; 0 0 0 1 0 1; 0 0 0 0 1 1; 0 0 0 1 1 1];  % tolerance origin / age / family situation
 
 tol=tol./repmat(sum(tol(:,:),2),1,6)*6; % normalize tol
 
@@ -51,7 +51,7 @@ tol=tol./repmat(sum(tol(:,:),2),1,6)*6; % normalize tol
 
 threshold=4.2;
 
-runs=1000;
+runs=300;
 
 n=zeros(1,4); %neighbours
 

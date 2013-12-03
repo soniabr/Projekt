@@ -11,3 +11,4 @@ agent(nostay_indices)=agent_nostay_random;
 numb_moved=length(nostay_indices);
 
 end
+
