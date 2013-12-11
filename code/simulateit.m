@@ -1,4 +1,4 @@
-function [ result, Avg_district ] = simulateit( runs, tol, agent, threshold, district_agent) 
+function [ result, Avg_district] = simulateit( runs, tol, agent, threshold, district_agent) 
 
 Avg_district=zeros(12,4,runs);
 
@@ -10,6 +10,18 @@ i
 
 % decides whether agent wants to stay or not and randomizes the ones which are not satisfied
 [agent, numb_moved]=nostay(agent, threshold);
+
+if i<20
+save_pic_movie(agent,district_agent,i)
+
+else
+if mod(i,4)==0
+save_pic_movie(agent,district_agent,i)
+
+
+end
+end
+
 
 % calculate average points and set points to zero
 AvgP=0;
@@ -28,5 +40,5 @@ Avg_district(:,:,i)=AvgD;
 end
 
 
-end
+
 

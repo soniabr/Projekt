@@ -1,10 +1,18 @@
+%%
+runs=1000;
+tol=[0 0 0 4 1 1];
+tol=tol./repmat(sum(tol(:,:),2),1,6)*6; % normalize tol
+n=zeros(1,4); %neighbours
 
-function [ Avg_district, result] = auswertung( threshold,runs ,tol)
+%district_names = {'kreis1' 'kreis2' 'kreis3' 'kreis4' 'kreis5' 'kreis6' 'kreis7' 'kreis8' 'kreis9' 'kreis10' 'kreis11' 'kreis12'};
 
-% loads specific result
-load(['result_' num2str(threshold) '_' num2str(runs) '_' num2str(tol) '.mat'])
+agent = randomizeagent(agent); % set random arragnement of agents
 
-cd('\\d\dfs\Users\all\buechij\private\Master\soms\movie3')
+district_agent=floor(sizepercent*length(agent)); % number of agents per district
+%%
+[result, Avg_district] = simulateit( runs, tol , agent, 3.6, district_agent);
+
+cd('\\d\dfs\Users\all\buechij\private\Master\soms\movie5')
 
 
 % plots number of agents changing against nr of cycles
@@ -104,6 +112,92 @@ saveas(figure(4),[num2str(threshold) '_' num2str(runs) '_' num2str(tol),'_Evolut
 
 
 % close all
+cd('\\d\dfs\Users\all\buechij\private\Master\soms\movie5\')
+
+%%
+cd('\\d\dfs\Users\all\buechij\private\Master\soms\movie1')
+save('results.mat','result','Avg_district','M','-v7.3')
 cd('\\d\dfs\Users\all\buechij\private\Master\soms')
+
+
+
+%%
+cd('\\d\dfs\Users\all\buechij\private\Master\soms\movie1')
+load('results.mat')
+
+zeropadd=zeros(1,12);
+M=reshape([agenti.origin],size(agenti));
+district_size=[0; district_agent];
+
+cd('\\d\dfs\Users\all\buechij\private\Master\soms\movie1\origin')
+
+for j=1:12
+  
+   for i=1:10
+        
+    agent_d=M(district_size(j)+1:district_size(j+1),i);
+    
+    n=length(agent_d);
+    
+    l = ceil(sqrt(n));
+    
+    zeropadd=2*ones(l*l-n,1);
+               
+    district=[agent_d;zeropadd];
+    
+    district_plot=reshape(district,l,l);
+    
+    imagesc(district_plot);
+    
+    saveas(figure(1),['District_',num2str(j),'_',num2str(i)])
+    saveas(figure(1),['District_',num2str(j),'_',num2str(i),'.jpeg'])
+
+    
+    close all
+    end
 end
 
+cd('\\d\dfs\Users\all\buechij\private\Master\soms')
+
+%%
+
+%%
+cd('\\d\dfs\Users\all\buechij\private\Master\soms\movie1')
+%load('results.mat')
+
+zeropadd=zeros(1,12);
+% M=reshape([agenti.origin],size(agenti));
+district_size=[0; district_agent];
+
+cd('\\d\dfs\Users\all\buechij\private\Master\soms\movie1\origin')
+
+  
+for i=1:100
+    for j=1:12
+        
+    agent_d=M((sum(district_size(1:j))+1):sum(district_size(1:j+1)),i);
+    n=length(agent_d);
+    
+    l = ceil(sqrt(n));
+    
+    zeropadd=2*ones(l*l-n,1);
+               
+    district=[agent_d;zeropadd];
+    
+    district_plot=reshape(district,l,l);
+    subplot(3,4,j)
+    
+    imagesc(district_plot);
+    xlabel(['district  ',num2str(j)])
+    set(gca,...
+    'XTickLabel','')
+    set(gca,...
+    'YTickLabel','')
+    end
+    
+    saveas(figure(1),['State_',num2str(i)])
+    saveas(figure(1),['state_',num2str(i),'.jpeg'])    
+    close all
+end
+
+cd('\\d\dfs\Users\all\buechij\private\Master\soms')

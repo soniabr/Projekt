@@ -43,15 +43,15 @@ SizeDistricts=cell2mat(struct2cell(load('SizeDistrict.mat')));
 
 %% Initials
 
-tol=[0 0 0 1 1 0; 0 0 0 1 0 1; 0 0 0 0 1 1; 1 0 0 0 0 0];  % tolerance origin / age / family situation
+tol=[0 0 0 4 1 1; 0 0 0 3 1.5 1.5; 0 0 0 3 1.5 1.5; 0 0 0 4 1 1;];  % tolerance origin / age / family situation
 
 tol=tol./repmat(sum(tol(:,:),2),1,6)*6; % normalize tol
 
 
 
-threshold=4.2;
+threshold=[3.9,3.6,3.9,3.6];
 
-runs=1000;
+runs=500;
 
 n=zeros(1,4); %neighbours
 
@@ -64,17 +64,17 @@ district_agent=floor(sizepercent*length(agent)); % number of agents per district
 
 %% checks environment of every agent and gives points according to satisfaction
 
-matlabpool(4)
-parfor j=1:4
+matlabpool(2)
+parfor j=1:2
     
     if j==1
         
-[ result, Avg_district ] = simulateit( runs, tol(1,:), agent, threshold, district_agent);
+[ result, Avg_district ] = simulateit( runs, tol(1,:), agent, threshold(1), district_agent);
 parsave(result, Avg_district, tol(1,:),threshold,runs,j)
 
     elseif j==2
        
-[ result, Avg_district ] = simulateit( runs, tol(2,:), agent, threshold, district_agent);
+[ result, Avg_district ] = simulateit( runs, tol(2,:), agent, threshold(2), district_agent);
 parsave(result, Avg_district, tol(2,:),threshold,runs,j)
 
     elseif j==3
