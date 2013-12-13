@@ -1,3 +1,3 @@
 # Videos Folder 
 
-If you produced interesting videos during your simulations please add them here. Remember to compress them before. 
+These files are movies visualizing the simulations. They will be discussed in the presentation.
