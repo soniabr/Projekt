@@ -1,3 +1,3 @@
 # Code Folder 
 
-Still working on code
+simulateit.m is the main code!
